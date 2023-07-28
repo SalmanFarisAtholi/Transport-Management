@@ -1,0 +1,67 @@
+<%- include('../partials/header.ejs') %>
+
+<main>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <a
+      href="/addLoad"
+      id="myBtn"
+      class="button2"
+      style="
+        background-color: rgb(255, 255, 255);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 15%;
+        border-color: slateblue;
+        border-style: solid;
+        padding-left: 3px;
+        padding-right: 3px;
+        border-width: 3px;
+        cursor: pointer;
+        text-decoration: none;
+      "
+    >
+      <h3 style="color: slateblue; font-weight: bolder">ADD NEW LOAD</h3>
+    </a>
+    <style>
+      .button2:hover {
+        background-color: #008cba;
+        color: white;
+      }
+    </style>
+  </div>
+  <div style="padding: 30px">
+    <table>
+      <thead>
+        <tr>
+          <th>Lorry No</th>
+          <th>Driver</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Load Detailes</th>
+          <th>Ammount</th>
+          <th>Ammount Get</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% loadList.forEach(function(load) { %>
+
+        <tr>
+          <td><%= load.lorryNumber%></td>
+          <td><%= load.driver%></td>
+          <td><%= load.start%></td>
+          <td><%= load.end%></td>
+          <td><%= load.detailes%></td>
+          <td><%= load.total%></td>
+          <td><%= load.recived%></td>
+
+          <td>
+            <a class="delete" href="deleteLoad/<%= load._id%>">DELETE</a>
+           
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</main>

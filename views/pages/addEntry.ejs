@@ -1,0 +1,72 @@
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    form {
+      width: 350px;
+      margin: 0 auto;
+      padding: 50px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  
+    label,
+    textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+  
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <h1>Add Entry</h1>
+  </div>
+  <% oneLorry%>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <form action="/postAddEntry/<%=oneLorry._id%>" method="post" id="addDetailsForm">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required />
+      <br />
+  
+      <label for="income">Income</label>
+      <input type="number" id="income" name="income" required />
+      <br />
+      <label for="maintaince">Maintaince</label>
+      <input type="number" id="maintaince" name="maintaince" required />
+      <br />
+      <label for="description">Description</label>
+      <input type="description" id="description" name="description" required />
+      <br />
+    
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  

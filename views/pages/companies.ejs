@@ -1,0 +1,70 @@
+<%- include('../partials/header.ejs') %>
+
+<main>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <a
+      class="button2"
+      style="
+        background-color: rgb(255, 255, 255);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 15%;
+        border-color: slateblue;
+        border-style: solid;
+        padding-left: 3px;
+        padding-right: 3px;
+        border-width: 3px;
+        cursor: pointer;
+        text-decoration: none;
+      "
+      href="/addCompany"
+    >
+      <h3 style="color: slateblue; font-weight: bolder">ADD NEW COMPANY</h3>
+    </a>
+    <style>
+      .button2:hover {
+        background-color: #008cba;
+        color: white;
+      }
+     
+
+    </style>
+  </div>
+
+  <!-- Table HTML structure -->
+  <div style="padding: 30px">
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Address</th>
+          <th>Ammount Out</th>
+          <th>Ammount In</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% companylist.forEach(function(company,index) { %>
+
+        <tr>
+          <td><%= company.name%></td>
+          <td><%= company.address%></td>
+          <td><%= company.out%></td>
+          <td><%= company.in%></td>
+          <td><%= company.description%></td>
+
+          <td>
+            <a class="edit" href="editCompany/<%= company._id%>">EDIT</a>&nbsp; &nbsp;
+            <!-- <a
+              class="delete"
+              href=""
+              >DELETE</a
+            > -->
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</main>

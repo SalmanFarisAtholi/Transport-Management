@@ -1,0 +1,83 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  label,
+  textarea {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+<div style="display: flex; justify-content: center; align-items: center">
+  <h1>Add Load</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center">
+  <form action="/addLoadDetailes" method="post" id="addDetailsForm">
+    <label for="name">Lorry Number</label>
+    <input type="text" id="name" name="number" required />
+    <br />
+    <label for="driver">Driver</label>
+    <input type="driver" id="driver" name="driver" required />
+
+    <label for="Start">Start Date</label>
+    <input type="date" id="start" name="start" required />
+    <br />
+    <label for="End">End Date</label>
+    <input type="date" id="end" name="end" required />
+    <br />
+    <label>Load Detailes</label>
+    <textarea
+      id="detailes"
+      name="detailes"
+      rows="3"
+      cols="47"
+      required
+    ></textarea>
+    <br />
+    <label>Total Ammount</label>
+    <input type="number" id="total" name="total" required />
+    <br />
+    <label>Ammount Get</label>
+    <input type="number" id="ammount" name="ammount" required />
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
+</div>

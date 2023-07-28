@@ -1,0 +1,72 @@
+<%- include('../partials/header.ejs') %>
+
+<main>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <a
+      class="button2"
+      style="
+        background-color: rgb(255, 255, 255);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 15%;
+        border-color: slateblue;
+        border-style: solid;
+        padding-left: 3px;
+        padding-right: 3px;
+        border-width: 3px;
+        cursor: pointer;
+        text-decoration: none;
+      "
+      href="/addLorry"
+    >
+      <h3 style="color: slateblue; font-weight: bolder">ADD NEW LORRY</h3>
+    </a>
+    <style>
+      .button2:hover {
+        background-color: #008cba;
+        color: white;
+      }
+    </style>
+  </div>
+  <div style="padding: 30px">
+    <table>
+      <thead>
+        <tr>
+          <th>SI.No</th>
+          <th>Lorry Number</th>
+          <th>Capacity</th>
+
+          <th>Description</th>
+         
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% lorryList.forEach(function(lorry,index) { %>
+
+        <tr>
+          <td><%=index+1 %></td>
+          <td><%= lorry.number%></td>
+          <td><%= lorry.capacity%></td>
+          <td><%= lorry.description%></td>
+         
+          <td>
+            <a
+              class="edit"
+              href="more/<%= lorry._id%>"
+              >More</a
+            >
+            <a
+            class="delete"
+            href="deleteLorry/<%= lorry._id%>"
+            >Delete</a
+          >
+            
+          </td>
+        </tr>
+        <% }); %>
+
+      </tbody>
+    </table>
+  </div>
+</main>

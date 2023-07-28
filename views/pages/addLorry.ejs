@@ -1,0 +1,73 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  label,
+  textarea {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+<div style="display: flex; justify-content: center; align-items: center">
+  <h1>Add Lorry</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center">
+  <form action="/addLorryDetailes" method="post" id="addDetailsForm">
+    <label for="number">Lorry Number</label>
+    <input type="text" id="number" name="number" required />
+    <br />
+
+    <label for="Ammount">Capacity</label>
+    <input type="text" id="out" name="capacity" required />
+    <br />
+   
+    <label>Description</label>
+    <textarea
+      id="description"
+      name="description"
+      rows="4"
+      cols="47"
+      required
+    ></textarea>
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
+</div>

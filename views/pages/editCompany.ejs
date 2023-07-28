@@ -1,0 +1,101 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  label,
+  textarea {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+<div style="display: flex; justify-content: center; align-items: center">
+  <h1>Edit Company</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center">
+  <% companyDetailes%>
+
+  <form
+    action="/editCompanyDetailes/<%=companyDetailes._id%>"
+    method="post"
+    id="addDetailsForm"
+  >
+    <label for="name">Company Name</label>
+    <input
+      value="<%= companyDetailes.name%>"
+      type="text"
+      id="name"
+      name="name"
+      required
+    />
+    <br />
+    <label for="address">Address</label>
+
+    <textarea id="Address" name="address" rows="4" cols="47" required>
+<%= companyDetailes.address%></textarea
+    >
+
+    <label for="Ammount">Ammount Out</label>
+    <input
+      value="<%= companyDetailes.out%>"
+      type="number"
+      id="out"
+      name="out"
+      required
+    />
+    <br />
+    <label for="Ammount">Ammount In</label>
+    <input
+      value="<%= companyDetailes.in%>"
+      type="number"
+      id="in"
+      name="in"
+      required
+    />
+    <br />
+    <label>Description</label>
+    <textarea id="description" name="description" rows="4" cols="47" required>
+<%= companyDetailes.description%></textarea
+    >
+    <br />
+
+    <input type="submit" value="Submit" />
+  </form>
+</div>

@@ -1,0 +1,86 @@
+<%- include('../partials/header.ejs') %>
+
+<main>
+  <div style="display: flex; justify-content: center; align-items: center">
+    <a
+      class="button2"
+      style="
+        background-color: rgb(255, 255, 255);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 15%;
+        border-color: rgb(219, 14, 14);
+        border-style: solid;
+        padding-left: 3px;
+        padding-right: 3px;
+        border-width: 3px;
+        cursor: pointer;
+        text-decoration: none;
+      "
+    ></a>
+      <% oneLorry%>
+
+      <h3 style="color: rgb(3, 3, 3); font-weight: bolder">
+        <%=oneLorry.number%>
+      </h3>
+    </a>
+    <a
+      class="button2"
+      style="
+        background-color: rgb(255, 255, 255);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 15%;
+        border-color: #008cba;
+        border-style: solid;
+        padding-left: 3px;
+        padding-right: 3px;
+        border-width: 3px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 20px;
+      "
+      href="/addEntry/<%=oneLorry._id%>"
+    >
+      <h3 style="color: rgb(3, 3, 3); font-weight: bolder">Add Entry</h3>
+    </a>
+    <style>
+      .button2:hover {
+        background-color: #008cba;
+        color: white;
+      }
+    </style>
+  </div>
+  <div style="padding: 30px">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Income</th>
+          <th>Maintaince</th>
+          <th>Description</th>
+
+          <th>Profit</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% oneLorry.entry.forEach(function(entry,index) { %>
+
+        <tr>
+          <td><%=entry.date%></td>
+          <td><%=entry.income%></td>
+          <td><%=entry.maintaince%></td>
+          <td><%=entry.description%></td>
+          <td><%=entry.profit%></td>
+
+          <td>
+            <a class="delete" href="deleteEntry/<%=index%>/<%=oneLorry._id%>">Delete</a>&nbsp;
+            &nbsp;
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</main>
