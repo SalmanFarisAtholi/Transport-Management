@@ -164,19 +164,40 @@ module.exports = {
     try {
       const id = req.params.id;
       const profit = req.body.income - req.body.maintaince;
+      const code = Math.floor(100000000 + Math.random() * 900000000);
       const newItem = {
         date: req.body.date,
         income: req.body.income,
         maintaince: req.body.maintaince,
         description: req.body.description,
         profit,
+        code,
       };
- 
+
       await lorry.updateOne({ _id: id }, { $push: { entry: newItem } });
+      await lorry.updateOne({ _id: id }, { $inc: { total: profit } });
+
       console.log("success");
       const oneLorry = await lorry.findById(id);
-      res.render("pages/oneLorry", { oneLorry });
-      
+      res.redirect(`/more/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  deleteEntry: async (req, res) => {
+    try {
+      const { ucode, id, profit } = req.params;
+      await lorry.updateOne(
+        { _id: id },
+        {
+          $pull: { entry: { code: ucode } },
+        }
+      );
+      await lorry
+        .updateOne({ _id: id }, { $inc: { total: -profit } })
+        .then((newone) => {
+          res.redirect(`/more/${id}`);
+        });
     } catch (error) {
       console.log(error);
     }

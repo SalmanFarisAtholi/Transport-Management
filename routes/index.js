@@ -18,7 +18,8 @@ const {
   deleteLorry,
   more,
   addEntry,
-  postAddEntry
+  postAddEntry,
+  deleteEntry
 } = require("../controllers/controller");
 
 router.get("/", index);
@@ -33,6 +34,7 @@ router.get("/editCompany/:id",editCompany)
 router.get("/deleteLorry/:id",deleteLorry)
 router.get("/more/:id",more)
 router.get("/addEntry/:id",addEntry)
+router.get("/more/deleteEntry/:ucode/:id/:profit",deleteEntry)
 
 
 

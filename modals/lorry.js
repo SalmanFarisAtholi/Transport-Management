@@ -13,12 +13,31 @@ const lorrySchema = new Mongoose.Schema({
     type: String,
     required: true,
   },
-  entry: {
-    type: Array,
-  },
+  entry: [
+    {
+      date: {
+        type: Date,
+      },
+      income: {
+        type: Number,
+      },
+      maintaince: {
+        type: Number,
+      },
+      description: {
+        type: String,
+      },
+      profit: {
+        type: Number,
+      },
+      code:{
+        type:Number,
+        unique: true
+      }
+    },
+  ],
   total: {
     type: Number,
-   
   },
 });
 
