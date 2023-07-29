@@ -49,15 +49,20 @@
         <tr>
           <td><%= load.lorryNumber%></td>
           <td><%= load.driver%></td>
-          <td><%= load.start%></td>
-          <td><%= load.end%></td>
+          <td>
+            <%= load.start.toLocaleDateString('en-US', {weekday:'short', year:
+            'numeric', month: 'long', day: 'numeric' })%>
+          </td>
+          <td>
+            <%= load.end.toLocaleDateString('en-US', {weekday:'short', year:
+            'numeric', month: 'long', day: 'numeric' })%>
+          </td>
           <td><%= load.detailes%></td>
           <td><%= load.total%></td>
           <td><%= load.recived%></td>
 
           <td>
             <a class="delete" href="deleteLoad/<%= load._id%>">DELETE</a>
-           
           </td>
         </tr>
         <% }); %>

@@ -74,7 +74,8 @@
         <% oneLorry.entry.forEach(function(entry,index) { %>
 
         <tr>
-          <td><%=entry.date%></td>
+          <td><%=entry.date.toLocaleDateString('en-US', {weekday:'short', year:
+            'numeric', month: 'long', day: 'numeric' })%></td>
           <td><%=entry.income%></td>
           <td><%=entry.maintaince%></td>
           <td><%=entry.description%></td>
